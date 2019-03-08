@@ -8,18 +8,12 @@ public class TeleportDestination : MonoBehaviour {
     [Tooltip("Transform to set position to - If not set, this transformation is used")]
     public Transform proxyTransform;
 
-    [Tooltip("Teleport can be activated using dwell time or using click (0 means click)")]
-    public float dwellTime = 0;
-
     // Our player's camera
     private Transform player;
     // And save the initial size of the player
     private float playerSize;
 
-
-    // If dwell time is used, remember the last time gaze was started 
-    private float lastGazedAt;
-
+    
 
     // Use this for initialization
     void Start () {
@@ -31,15 +25,6 @@ public class TeleportDestination : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        // Update dwell time
-		if (lastGazedAt > 0)
-        {
-            if (Time.time - lastGazedAt >= dwellTime)
-            {
-                lastGazedAt = 0;
-                Teleport();
-            }
-        }
 	}
 
     public void StartedGazingAt()
@@ -54,11 +39,6 @@ public class TeleportDestination : MonoBehaviour {
             // Just in case no particle system is used
         }
 
-        // Remember the gazing time
-        if (dwellTime > 0)
-        {
-            lastGazedAt = Time.time;
-        }
     }
 
     public void StoppedGazingAt()
@@ -73,8 +53,6 @@ public class TeleportDestination : MonoBehaviour {
             // Just in case no particle system is used
         }
 
-        // Reset dwell timer
-        lastGazedAt = 0;
     }
 
     public void Teleport()

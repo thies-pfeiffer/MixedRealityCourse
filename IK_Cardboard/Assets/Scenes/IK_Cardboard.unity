@@ -278,7 +278,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 674020389
+  randomSeed: 165505491
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3706,7 +3706,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxyTransform: {fileID: 0}
-  dwellTime: 0
 --- !u!4 &79038988
 Transform:
   m_ObjectHideFlags: 0
@@ -4553,44 +4552,50 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 959308593}
     m_Modifications:
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+    - target: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114168270765312678, guid: 96e42bd09844f8642987d12c32437c70,
+        type: 2}
+      propertyPath: reticleGrowthSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 96e42bd09844f8642987d12c32437c70, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &848404733 stripped
 Transform:
-  m_PrefabParentObject: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+  m_PrefabParentObject: {fileID: 4665122432269568, guid: 96e42bd09844f8642987d12c32437c70,
+    type: 2}
   m_PrefabInternal: {fileID: 848404732}
 --- !u!1001 &873428114
 Prefab:
@@ -5981,7 +5986,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 674020389
+  randomSeed: -513679089
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9404,7 +9409,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2144954540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.473, y: -0.001, z: 1.427}
+  m_LocalPosition: {x: -1.852, y: -0.001, z: 1.427}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 792452019}
@@ -9424,4 +9429,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   proxyTransform: {fileID: 0}
-  dwellTime: 0

@@ -86,7 +86,7 @@ public class TeleportDestination : MonoBehaviour {
         }
         else
         {
-            player.transform.position = new Vector3(transform.position.x, playerSize + proxyTransform.position.y, transform.position.z);
+            player.transform.position = new Vector3(transform.position.x, playerSize + transform.position.y, transform.position.z);
         }
     }
 

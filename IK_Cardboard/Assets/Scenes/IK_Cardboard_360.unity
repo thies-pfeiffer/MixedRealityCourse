@@ -499,12 +499,12 @@ Prefab:
       objectReference: {fileID: 897140762}
     - target: {fileID: 1328031013629234, guid: 90d17ed9adb30614792af28cbf93a8ef, type: 2}
       propertyPath: m_Name
-      value: PanoSphereBeach
+      value: PanoSphereCity
       objectReference: {fileID: 0}
     - target: {fileID: 114037216120856114, guid: 90d17ed9adb30614792af28cbf93a8ef,
         type: 2}
       propertyPath: name
-      value: Beach
+      value: City
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90d17ed9adb30614792af28cbf93a8ef, type: 2}
@@ -550,7 +550,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1328031013629234, guid: 90d17ed9adb30614792af28cbf93a8ef, type: 2}
       propertyPath: m_Name
-      value: PanoSphereCity
+      value: PanoSphereBeach
       objectReference: {fileID: 0}
     - target: {fileID: 23151391503221506, guid: 90d17ed9adb30614792af28cbf93a8ef,
         type: 2}
@@ -565,7 +565,7 @@ Prefab:
     - target: {fileID: 114037216120856114, guid: 90d17ed9adb30614792af28cbf93a8ef,
         type: 2}
       propertyPath: name
-      value: City
+      value: Beach
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90d17ed9adb30614792af28cbf93a8ef, type: 2}

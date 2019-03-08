@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,8 +25,7 @@ public class TeleportDestination : MonoBehaviour {
     void Start () {
         player = GameObject.FindWithTag("Player").transform;
         playerSize = player.transform.position.y;
-
-        GetComponentInChildren<ParticleSystem>().startRotation = transform.parent.rotation.eulerAngles.z * -1 * Mathf.Deg2Rad;
+        
     }
 	
 	// Update is called once per frame
@@ -46,7 +46,13 @@ public class TeleportDestination : MonoBehaviour {
     {
         Debug.Log("Start");
         // Start particle system
-        GetComponentInChildren<ParticleSystem>().Play();
+        try
+        {
+            GetComponentInChildren<ParticleSystem>().Play();
+        } catch (Exception e)
+        { 
+            // Just in case no particle system is used
+        }
 
         // Remember the gazing time
         if (dwellTime > 0)
@@ -58,7 +64,14 @@ public class TeleportDestination : MonoBehaviour {
     public void StoppedGazingAt()
     {
         // Stop particle system
-        GetComponentInChildren<ParticleSystem>().Stop();
+        try
+        {
+            GetComponentInChildren<ParticleSystem>().Stop();
+        }
+        catch (Exception e)
+        {
+            // Just in case no particle system is used
+        }
 
         // Reset dwell timer
         lastGazedAt = 0;

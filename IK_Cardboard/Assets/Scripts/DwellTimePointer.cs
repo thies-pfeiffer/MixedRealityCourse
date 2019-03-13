@@ -100,7 +100,7 @@ public class DwellTimePointer : GvrBasePointer {
         ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
         ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
 
-        lastGazedAt = 0;
+        lastGazedAt = float.MaxValue;
         
     }
 
@@ -119,7 +119,7 @@ public class DwellTimePointer : GvrBasePointer {
             bool trigger = Time.time - lastGazedAt >= dwellTime;
             if (trigger)
             {
-                lastGazedAt = 0;
+                lastGazedAt = float.MaxValue;
             }
             return trigger;
         }
@@ -159,7 +159,7 @@ public class DwellTimePointer : GvrBasePointer {
         float inner_diameter_big = 2.0f * Mathf.Tan(inner_half_angle_radians_big);
         float outer_diameter_big = 2.0f * Mathf.Tan(outer_half_angle_radians_big);
 
-        if (lastGazedAt != 0)
+        if (lastGazedAt != float.MaxValue)
         {
             float fraction = (Time.time - lastGazedAt) / dwellTime;
             

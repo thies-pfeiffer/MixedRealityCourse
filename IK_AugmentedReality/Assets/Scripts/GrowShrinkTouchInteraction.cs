@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchInteraction : MonoBehaviour {
+public class GrowShrinkTouchInteraction : ITouchInteraction {
     
     private bool big;
 
@@ -11,7 +11,7 @@ public class TouchInteraction : MonoBehaviour {
         this.big = false;
     }
 
-    public void ObjectTouched()
+    public override void ObjectTouched()
     {
         if (this.big)
         {

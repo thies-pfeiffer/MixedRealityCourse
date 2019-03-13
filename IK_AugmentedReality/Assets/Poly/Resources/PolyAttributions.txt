@@ -1,0 +1,7 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: Water Bottle
+Author: Jerad Bitner
+URL: https://poly.google.com/view/0yhPAyLwwRN
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode

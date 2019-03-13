@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------
+﻿//-----------------------------------------------------------------------
 // <copyright file="AugmentedImageExampleController.cs" company="Google">
 //
 // Copyright 2018 Google Inc. All Rights Reserved.
@@ -29,7 +29,7 @@ namespace GoogleARCore.Examples.AugmentedImage
     /// <summary>
     /// Controller for AugmentedImage example.
     /// </summary>
-    public class AugmentedImageExampleController : MonoBehaviour
+    public class ARController : MonoBehaviour
     {
         /// <summary>
         /// A prefab for visualizing an AugmentedImage.

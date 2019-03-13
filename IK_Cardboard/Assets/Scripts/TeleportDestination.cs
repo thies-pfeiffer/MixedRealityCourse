@@ -8,7 +8,7 @@ public class TeleportDestination : MonoBehaviour {
     [Tooltip("Transform to set position to - If not set, this transformation is used")]
     public Transform proxyTransform;
 
-    // Our player's camera
+    // Our player's transform
     private Transform player;
     // And save the initial size of the player
     private float playerSize;

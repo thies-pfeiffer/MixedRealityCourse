@@ -73,8 +73,10 @@ public class DwellTimePointer : GvrBasePointer {
     {
         SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
 
-        lastGazedAt = Time.time;
-
+        if (isInteractive)
+        {
+            lastGazedAt = Time.time;
+        }
 
         float inner_half_angle_radians = Mathf.Deg2Rad * ReticleInnerAngle * 0.5f;
         float outer_half_angle_radians = Mathf.Deg2Rad * ReticleOuterAngle * 0.5f;
@@ -99,6 +101,7 @@ public class DwellTimePointer : GvrBasePointer {
         ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
 
         lastGazedAt = 0;
+        
     }
 
     public override void OnPointerClickDown()
@@ -136,17 +139,7 @@ public class DwellTimePointer : GvrBasePointer {
     {
 
         ReticleDistanceInMeters =
-      Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
-
-        //if (ReticleInnerAngle < RETICLE_MIN_INNER_ANGLE)
-        //{
-        //    ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
-        //}
-
-        //if (ReticleOuterAngle < RETICLE_MIN_OUTER_ANGLE)
-        //{
-        //    ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
-        //}
+        Mathf.Clamp(ReticleDistanceInMeters, RETICLE_DISTANCE_MIN, maxReticleDistance);
 
         ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
         ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
@@ -157,14 +150,28 @@ public class DwellTimePointer : GvrBasePointer {
         float inner_diameter = 2.0f * Mathf.Tan(inner_half_angle_radians);
         float outer_diameter = 2.0f * Mathf.Tan(outer_half_angle_radians);
 
-        ReticleInnerDiameter =
-      Mathf.Lerp(ReticleInnerDiameter, inner_diameter, Time.unscaledDeltaTime * dwellTime);
-        ReticleOuterDiameter =
-      Mathf.Lerp(ReticleOuterDiameter, outer_diameter, Time.unscaledDeltaTime * dwellTime);
+        float ReticleInnerAngleBig = RETICLE_MIN_INNER_ANGLE + RETICLE_GROWTH_ANGLE;
+        float ReticleOuterAngleBig = RETICLE_MIN_OUTER_ANGLE + RETICLE_GROWTH_ANGLE;
 
-        MaterialComp.SetFloat("_InnerDiameter", ReticleInnerDiameter * ReticleDistanceInMeters);
-        MaterialComp.SetFloat("_OuterDiameter", ReticleOuterDiameter * ReticleDistanceInMeters);
-        MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
+        float inner_half_angle_radians_big = Mathf.Deg2Rad * ReticleInnerAngleBig * 0.5f;
+        float outer_half_angle_radians_big = Mathf.Deg2Rad * ReticleOuterAngleBig * 0.5f;
+
+        float inner_diameter_big = 2.0f * Mathf.Tan(inner_half_angle_radians_big);
+        float outer_diameter_big = 2.0f * Mathf.Tan(outer_half_angle_radians_big);
+
+        if (lastGazedAt != 0)
+        {
+            float fraction = (Time.time - lastGazedAt) / dwellTime;
+            
+            inner_diameter =
+          Mathf.Lerp(inner_diameter_big, inner_diameter, fraction);
+            outer_diameter =
+          Mathf.Lerp(outer_diameter_big, outer_diameter, fraction);
+        }
+
+        MaterialComp.SetFloat("_InnerDiameter", inner_diameter * ReticleDistanceInMeters);
+        MaterialComp.SetFloat("_OuterDiameter", outer_diameter * ReticleDistanceInMeters);
+        MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);    
     }
 
     void Awake()
